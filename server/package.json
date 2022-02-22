@@ -1,0 +1,28 @@
+{
+  "name": "sse-server",
+  "version": "1.0.0",
+  "description": "sse-server",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "nodemon src/app.ts",
+    "pre-build": "rm -rf ./dist/",
+    "build": "npm run pre-build && tsc -p . && npm run post-build",
+    "post-build": "cp -r ./src/public ./dist/public",
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cors": "latest",
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "nodemon": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "express": "latest"
+  }
+}
